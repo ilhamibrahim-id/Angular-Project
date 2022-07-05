@@ -62,6 +62,8 @@
 <div class="container">
   <div class="col-lg-12 col-md-12">
     <hr />
+    <h3 style="text-align: center;">Komentar :</h3>
+    <hr />
     <div *ngFor="let komentars of komentar">
     <h3 >{{ komentars.name | uppercase }} || {{ date | date: 'fullDate' }}</h3>
     <h5>{{ komentars.deksripsi }}</h5>
