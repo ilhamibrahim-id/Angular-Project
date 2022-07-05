@@ -1,0 +1,11 @@
+.footercs {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+}
+.font {
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 10pt;
+}

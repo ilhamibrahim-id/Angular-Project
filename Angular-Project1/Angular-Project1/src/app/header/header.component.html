@@ -1,0 +1,19 @@
+<!-- <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">{{ title }}</a>
+    </div>
+    <div class="navbar-header navbar-right">
+     <h4 [style.color]="'#777'">{{ date | date: 'fullDate' }}</h4>
+    </div>
+  </div>
+</nav> -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <h3 [style.color]="'white'">{{ title2 }}</h3>
+  </div>
+  <h5 [style.color]="'white'">{{ date | date: 'fullDate' }}</h5>
+</nav>

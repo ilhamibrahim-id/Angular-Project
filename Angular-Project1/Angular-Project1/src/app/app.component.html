@@ -1,0 +1,94 @@
+<app-header [parentData]="lempar" (childEvent)="getDat($event)"></app-header>
+<hr />
+<marquee><h1>Selamat Datang Bro!</h1></marquee>
+<hr/>
+<div class="jumbotron jumbotron-fluid" [ngStyle]="ganti" [style.padding-bottom]="'15px'">
+  <div class="container">
+    <h1>{{ dataku }}</h1>
+    <p>Menjual berbagai kebutuhan anda. dengan pembayaran kredit syariah atau bayar nanti (pay latter) mari gunakan
+      layanan kami yang pasti laptop cepat tanpa hambatan anti kerusakan anti apapun masalah anda akan teratasi.
+    </p>
+  </div>
+</div>
+<div class="container">
+  <hr />
+  <h3 style="text-align: center;"> Produk Kami :</h3>
+  <hr />
+  <main>
+    <div *ngFor="let datas of data">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 ">
+          <div class="card h-100 shadow-sm"> <img
+              src="assets/logo.png" [style.width]="'400px'" style="display: block;
+              margin-left: auto;
+              margin-right: auto;
+              width: 50%;"
+              alt="...">
+            <div class="card-body">
+              <div class="clearfix mb-3">
+                <span class="float-start badge rounded-pill bg-primary" style="font-size: '20px';"> {{ datas.merk }}</span>
+                <span class="float-end aprice-hp" [style.float]="'right'" [style.color]="'red'" style="font-size: 20px;">{{ datas.harga | currency: 'Rp.' }}</span>
+              </div>
+              <h5 class="card-title" style="font-size: 1.3rem;">{{datas.deskripsi}}</h5>
+              <div class="text-center my-4"> <a href="#" class="btn btn-warning">Masuk Ke Detail</a> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<div class="container" [style.padding-top]="'20px'" [style.padding-bottom]="'20px'">
+  <hr />
+  <h3 style="text-align: center;">Beri Kami Ulasan Anda :</h3>
+  <hr />
+  <div class="col-lg-12 col-md-12 col-xs-12">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Nama :</label>
+      <input type="text" class="form-control" id= "name" [(ngModel)]="name" aria-describedby="namaHelp"
+        placeholder="Masukan Nama">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Deskripsi</label>
+      <input type="text" class="form-control" id="deksripsi" [(ngModel)]="deksripsi" id="exampleInputPassword1" placeholder="Masukan Deskripsi">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Tanggal</label>
+      <input type="text" class="form-control" id="date" [disabled]="disable" placeholder="{{ date | date: 'fullDate' }}">
+    </div>
+    <button type="submit" [disabled]="!name || !deksripsi" (click)="addToArray()" class="btn btn-primary">Submit</button>
+  </div>
+</div>
+<div class="container">
+  <div class="col-lg-12 col-md-12">
+    <hr />
+    <div *ngFor="let komentars of komentar">
+    <h3 >{{ komentars.name | uppercase }} || {{ date | date: 'fullDate' }}</h3>
+    <h5>{{ komentars.deksripsi }}</h5>
+    </div>
+    <hr />
+  </div>
+</div>
+<button id="myBtn" onclick="topFunction()"><a href="#top" style="color: white">Kembali Ke Atas</a></button>
+<script>
+  //Get the button
+  var mybutton = document.getElementById("myBtn");
+
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+  </script>
+<app-footer></app-footer>
