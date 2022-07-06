@@ -1,0 +1,22 @@
+<div class="container">
+  <h3>{{errorMsg}}</h3>
+  <h3> get data for http</h3>
+  <div class="col-lg-12">
+    <div class="table-responsive">
+      <table class="table">
+          <tr>
+            <th>id</th>
+            <th>Nama</th>
+            <th>Umur</th>
+            <th>Nim</th>
+          </tr>
+          <tr *ngFor="let mahasiswa of mahasiswaas">
+            <td>{{ mahasiswa.id2 }}</td>
+            <td>{{ mahasiswa.namae2 }}</td>
+            <td>{{ mahasiswa.age2 }}</td>
+            <td>{{ mahasiswa.nim2 }}</td>
+          </tr>
+      </table>
+    </div>
+  </div>
+</div>

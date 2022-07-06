@@ -65,6 +65,7 @@ export class AppComponent {
     };
     this.komentar.push(datsun);
     alert("Komentar Anda Telah Masuk");
-    console.log(this.komentar);
+    this.name = null;
+    this.deksripsi = null;
   }
 }
