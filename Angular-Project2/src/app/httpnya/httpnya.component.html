@@ -1,22 +1,50 @@
-<div class="container">
-  <h3>{{errorMsg}}</h3>
-  <h3> get data for http</h3>
-  <div class="col-lg-12">
-    <div class="table-responsive">
-      <table class="table">
-          <tr>
-            <th>id</th>
-            <th>Nama</th>
-            <th>Umur</th>
-            <th>Nim</th>
-          </tr>
-          <tr *ngFor="let mahasiswa of mahasiswaas">
-            <td>{{ mahasiswa.id2 }}</td>
-            <td>{{ mahasiswa.namae2 }}</td>
-            <td>{{ mahasiswa.age2 }}</td>
-            <td>{{ mahasiswa.nim2 }}</td>
-          </tr>
-      </table>
-    </div>
-  </div>
-</div>
+
+      <div class=" min-w-full inline-block shadow-2xl align-middle pt-12 rounded">
+        <div class="overflow-hidden rounded-md">
+          <table class="min-w-full divide-y divide-gray-200 table-fixed dark:divide-gray-700">
+            <thead class="bg-gray-100 dark:bg-gray-700">
+              <tr>
+                <th scope="col"
+                  class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                  Id
+                </th>
+                <th scope="col"
+                  class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                  Nama
+                </th>
+                <th scope="col"
+                  class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                  Umur
+                </th>
+                <th scope="col"
+                  class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                  Nim
+                </th>
+                <th scope="col"
+                class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                Delete
+              </th>
+              </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
+              <tr *ngFor="let mahasiswa of mahasiswaas ; let myIndex=index;" class="hover:bg-gray-100 dark:hover:bg-gray-700">
+                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{
+                  mahasiswa.id2 }}</td>
+                <td class="py-4 px-6 text-sm font-medium text-gray-500 whitespace-nowrap dark:text-white">{{
+                  mahasiswa.namae2 }}</td>
+                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{
+                  mahasiswa.age2 }}</td>
+                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{
+                  mahasiswa.nim2 }}</td>
+                  <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    <button (click)="removeItem(myIndex)" class="inline-flex items-center px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-sm font-medium rounded-md">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                      </svg>
+                      </button>
+                  </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>

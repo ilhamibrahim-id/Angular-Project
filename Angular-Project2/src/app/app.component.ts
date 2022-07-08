@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { HttpnyaComponent } from './httpnya/httpnya.component';
 import { MahasiswaaService } from './mahasiswaa.service';
 
 @Component({
@@ -7,16 +8,24 @@ import { MahasiswaaService } from './mahasiswaa.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  @ViewChild(HttpnyaComponent, { static: true })
+  child!: HttpnyaComponent;
    title = 'Angular-Project2';
   public mahasiswaas: any = [];
 
-  constructor(private _mahasiswaSevirce: MahasiswaaService) {
+  masuk(){
+    this.child.sembarang();
+  }
 
+  constructor(private _mahasiswaSevirce: MahasiswaaService) {
+  this.mahasiswaas = this._mahasiswaSevirce.getMahasiswaas();
   }
   ngOnInit(): void {
-      this.mahasiswaas = this._mahasiswaSevirce.getMahasiswaas();
+
+
   }
   public id: any | string;
+  public cari: any | string;
   public namae: any | string;
   public age: any | string;
   public nim: any | string;
@@ -47,12 +56,18 @@ export class AppComponent {
     };
     this._mahasiswaSevirce.postMahasiswa2(datsun).subscribe(responData => {
       console.log(responData);
+      this.masuk()
     });
     alert("Mahasiswa Berhasil Ditambahkan");
-    window.location.reload();
     this.id2 = null;
     this.namae2 = null;
     this.age2 = null;
     this.nim2 = null;
+  }
+  removeItem(index: any){
+    this.mahasiswaas.splice(index, 1);
+  }
+  isCherries(fruit :any) {
+    return fruit.name === 'cherries';
   }
   }
