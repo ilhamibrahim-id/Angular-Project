@@ -8,12 +8,39 @@
     </div>
   </div>
 </nav> -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <h3 [style.color]="'white'">{{ title2 }}</h3>
+    <h3 [style.color]="'white'"><a href="/"> {{ title2 }} </a></h3>
+  </div>
+  <h5 [style.color]="'white'">{{ date | date: 'fullDate' }}</h5>
+</nav> -->
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin-bottom: -20px;">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>  <div class="container">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav" style="padding-left: 18px;">
+        <li class="nav-item active">
+          <a class="nav-link h4" href="#"><b>{{ title2 }}</b> &nbsp;</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link h4" routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link h4" routerLink="/aboutus" routerLinkActive="active" ariaCurrentWhenActive="page">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link h4" routerLink="/product" routerLinkActive="active" ariaCurrentWhenActive="page">Our Product</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link h4" routerLink="/contactus" routerLinkActive="active" ariaCurrentWhenActive="page">Contact</a>
+        </li>
+      </ul>
+    </div>
   </div>
   <h5 [style.color]="'white'">{{ date | date: 'fullDate' }}</h5>
 </nav>

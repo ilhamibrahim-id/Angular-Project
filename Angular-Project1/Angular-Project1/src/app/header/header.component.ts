@@ -7,7 +7,6 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class HeaderComponent implements OnInit{
   @Input('parentData') public title2: any;
-  @Output() public childEvent = new EventEmitter();
   // balik(){
   //   this.childEvent.emit("batoka store");
   // }
@@ -19,6 +18,6 @@ export class HeaderComponent implements OnInit{
   };
   public date = new Date();
   ngOnInit(): void {
-    this.childEvent.emit("Batoka Store!");
+
   }
 }

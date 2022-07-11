@@ -1,0 +1,37 @@
+<div class="container">
+  <hr />
+  <h3 style="text-align: center;"> Produk Kami :</h3>
+  <hr />
+  <div class="container h-100">
+    <div class="d-flex justify-content-center h-100">
+      <div class="searchbar">
+        <input class="search_input" type="text" name="" placeholder="Search...">
+        <a class="search_icon"><span class="glyphicon glyphicon-search" style="color: grey;"></span></a>
+      </div>
+    </div>
+  </div>
+  <br />
+  <main>
+    <div *ngFor="let products of product let i=index;">
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="card h-100 shadow-sm"> <img
+              src="assets/logo.png" [style.width]="'200px'" style="display: block;
+              margin-left: auto;
+              margin-right: auto;
+              width: 50%;"
+              alt="...">
+            <div class="card-body">
+              <div class="clearfix mb-3">
+                <span class="float-start badge rounded-pill bg-primary" style="font-size: '13px';"> {{ products.merk }}</span>
+                <span class="float-end aprice-hp" [style.float]="'right'" [style.color]="'red'" style="font-size: 13px;">{{ products.harga | currency: "Rp. "}}</span>
+              </div>
+              <h5 class="card-title" style="font-size: 1 rem;">{{products.deksripsi}}</h5>
+              <div class="text-center my-4"> <a class="btn btn-warning" href="product/{{i + 1}}">Masuk Ke Detail</a> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </main>
+</div>
+<br />
+<app-footer></app-footer>
